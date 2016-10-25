@@ -1,0 +1,129 @@
+.timescale-scale-bar {
+    position: absolute;
+    width: 100%;
+    border-top: 2px dotted rgba(255, 198, 39, 0.3); //aaa-yellow in rgba
+    color: black;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    .date {
+        display: none;
+        font-size: .8rem;
+        margin: 0 10px;
+    }
+}
+
+.timeline-scale-item {
+    width: 2rem;
+}
+
+.timeline-scale-head {
+    position: absolute;
+    left: 85%;
+    z-index: 1;
+}
+
+.vertical-text {
+    transform: rotate(90deg);
+    transform-origin: left top 0;
+    padding: 0 10px;
+}
+
+
+/* TIME PERIODS 
+-------------------------------------------*/
+
+// no offset for level 0 time periods
+.neogene,
+.quarternary {
+    margin-left: 0;
+}
+
+//offset for level 1
+.pliocene,
+.miocene,
+.pleistocene,
+.holocene {
+    margin-left: 3%;
+}
+
+//offset for level 2
+.piazcenzian,
+.zanclean,
+.messinian,
+.middle,
+.upper,
+.calabrian,
+.gelasian {
+    margin-left: 6%;
+}
+
+
+/*-------------------------------------------
+neogene
+    -miocene
+        --messinian
+    -pliocene
+        --zanclean
+        --piacenzian
+quarternary
+    -pleistocene
+        --gelasian
+        --callabrian
+        --middle
+        --upper
+    -holocene
+-------------------------------------------*/
+
+//styling time periods individually
+.neogene {
+    background-color: red;
+}
+
+.miocene {
+    background-color: orange;
+}
+
+.messinian {
+    background-color: $aaa-yellow;
+}
+
+.pliocene {
+    background-color: limegreen;
+}
+
+.zanclean {
+    background-color: yellowgreen;
+}
+
+.piazcenzian {
+    background-color: forestgreen;
+}
+
+.quarternary {
+    background-color: royalblue;
+}
+
+.pleistocene {
+    background-color: blueviolet;
+}
+
+.gelasian {
+    background-color: mediumpurple;
+}
+
+.calabrian {
+    background-color: purple;
+}
+
+.middle {
+    background-color: mediumvioletred;
+}
+
+.upper {
+    background-color: crimson;
+}
+
+.holocene {
+    background-color: deepskyblue;
+}

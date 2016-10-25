@@ -1,0 +1,165 @@
+<html>
+
+<head>
+    <script src="playground.js"></script>
+    <script src="js-dependencies/jquery-3.1.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+
+    <!--Content Header-->
+    <div class="timeline-header-container">
+
+        <div class="timeline-header">
+
+            <div class="header-image"></div>
+            <h1>Human Evolution</h1>
+
+            <p class="byline">Created with data provided by ASU's Institute of Human Origins</p>
+
+            <p>Timeline Description and credits. Cupcake ipsum dolor sit amet jujubes marshmallow tiramisu liquorice. Marzipan lemon drops candy gummies tootsie roll. Cookie ice cream tiramisu chocolate pie.</p>
+        </div>
+
+        <div class="scroll-text">
+            <a href="#timelineContainer">
+                <p>Start <img src="images/placeholder-arrow.svg"> </p>
+            </a>
+        </div>
+
+        <div class="scroll-container">
+            <div class="neogene-overflow"></div>
+        </div>
+        <div class="scroll-down-arrow"></div>
+
+    </div>
+
+
+    <!--Timeline Container-->
+    <div id="timelineContainer" class="timeline">
+        <!--Center line-->
+        <div class="timeline-line"></div>
+        <!--Loading animation-->
+        <div class="load-container">
+            <div class="loading"></div>
+        </div>
+
+        <!--Timeline templates-->
+        <div id="scale-template"></div>
+        <div id="event-template"></div>
+
+
+        <script>
+            //open jquery functions  
+            $(document).ready(function () {
+
+                //hide timeline while data loads
+                $('.timeline-line').hide();
+
+                //load templates for data
+                $('#scale-template').load('templates/timeline-scale-template.html');
+                $('#event-template').load('templates/timeline-event-template.html');
+
+                // run timeline function on time scale
+                $.getJSON('timeline-timescale.json', function (data) {
+
+                    // in getPixels, the first # is total years ago
+                    // optionally, add a second # for the length of page in pixels
+                    // if no second # is given, it defaults to 4x window height
+                    var newTimeScale = timeLineConstructor.getPixels(data.timescale, 7300000);
+
+                    // format the date range data
+                    newTimeScale = timeLineConstructor.formatYears(newTimeScale);
+
+                    //remove excess white space from template
+                    template = $.trim($('#timeScaleTemplate').html());
+
+                    //create listEvents item
+                    listEvents = ''
+
+                    // loop through objects and process data for output
+                    createFromTemplates(newTimeScale);
+
+                    //create new elements after loop ends
+                    //add to timelineContainer div
+                    $('#timelineContainer').append(listEvents);
+
+                    console.log(newTimeScale);
+                });
+
+
+                //run timeline function on timeline data points
+                $.getJSON('timeline-data.json', function (data) {
+
+                    $('.loading').hide();
+                    $('.timeline-line').show();
+
+                    //repeat process used above to make points on timeline
+                    var newArrObj = timeLineConstructor.getPixels(data.data, 7300000);
+                    newArrObj = timeLineConstructor.formatYears(newArrObj);
+                    template = $.trim($('#timelineTemplate').html());
+                    listEvents = '';
+                    createFromTemplates(newArrObj);
+                    $('#timelineContainer').append(listEvents);
+                    $('.timeline').height(window.innerHeight * 4 + 200);
+
+                    //make modifications after content is processed and created
+                    //________________________________________________________
+
+                    // hide body text on document load
+                    $('.timeline-item-body').hide();
+
+                    //toggle body on item click
+                    $('.timeline-item').on('click', function () {
+
+                        var bIndex = this.getElementsByClassName('timeline-item-body');
+                        var bIndex = $(bIndex).attr('id');
+
+                        var homininBorder = document.getElementsByClassName('hominin');
+                        var contextBorder = document.getElementsByClassName('context');
+
+                        $('#' + bIndex).toggle();
+                        $('.timeline-item-head').toggle();
+                        $('.timeline-hor-scale-container').toggle();
+                        $(homininBorder).toggleClass('hide-border');
+                        $(contextBorder).toggleClass('hide-border');
+                    });
+
+                    // hide overlay on hover
+                    $('.timeline-item-head').hover(function () {
+
+                        var noOverlay = this.getElementsByClassName('tl-image-overlay');
+                        $(noOverlay).toggleClass('tl-no-overlay');
+
+                    });
+
+                    // tell all anchor tags to smoothly scroll down the page 
+                    // and give the link a 150px offset above
+                    $('a[href^="#"]').on('click', function (e) {
+                        e.preventDefault();
+
+                        var target = this.hash;
+                        var $target = $(target);
+
+                        $('html, body').stop().animate({
+                            'scrollTop': $target.offset().top - 150
+                        }, 900, 'swing', function () {
+                            window.location.hash = target;
+                        });
+                    });
+
+                });
+
+            });
+        </script>
+
+    </div>
+
+    <!--Footer-->
+    <div class="footer">
+        <p>This is a placeholder</p>
+    </div>
+
+</body>
+
+</html>

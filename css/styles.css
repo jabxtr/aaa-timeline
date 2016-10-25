@@ -1,0 +1,168 @@
+/* AAA TIMELINE STYLESHEETS
+-------------------------------------------
+Created 2016 by James Baxter for Ask An Anthropologist
+at Arizona State University. 
+
+This project was funded by The Institute of Human 
+Origins and the ASU Provost's Office.
+-------------------------------------------*/
+/* SCSS VARIABLES
+-------------------------------------------*/
+/* OVERRIDES
+-------------------------------------------*/
+html, body, p, ul, li, h1, h2, h3, h4, h5, h6, a, div, img { margin: 0; padding: 0; background: none; }
+
+html { font-family: roboto, helvetica, arial, sans-serif; font-size: 1rem; }
+
+h1, h2, h3, h4, h5, h6, p, li { line-height: 1.6; }
+
+p { margin: .8em 0; }
+p:first-of-type { margin-top: 0; }
+p:last-of-type { margin-bottom: 0; }
+
+/* HEADER 
+-------------------------------------------*/
+.timeline-header-container { color: white; display: flex; justify-content: center; align-items: center; height: 75%; width: 100%; background-color: black; overflow: hidden; clear: both; }
+.timeline-header-container h1, .timeline-header-container p { text-align: center; margin-left: auto; margin-right: auto; align-self: center; }
+
+.timeline-header { padding: 2em; max-width: 45%; height: 70%; clear: both; position: absolute; }
+.timeline-header h1 { font-size: 6rem; line-height: 1.2; margin-bottom: .2em; }
+.timeline-header p { font-size: 1.2rem; }
+.timeline-header p.byline { font-size: 1rem; color: #ffc425; }
+
+.scroll-text { position: absolute; top: 70%; font-size: 1.5rem; text-transform: uppercase; font-weight: 600; letter-spacing: 4; display: flex; align-content: flex-end; justify-content: flex-end; cursor: pointer; }
+.scroll-text a { color: #ffc425; text-decoration: none; }
+.scroll-text a:hover { color: white; }
+.scroll-text p { margin-bottom: 0; }
+.scroll-text img { width: auto; height: 20px; display: flex; justify-content: center; align-self: center; text-align: center; margin-right: auto; margin-left: auto; }
+
+.scroll-container { position: absolute; height: 100px; width: 100%; top: 75%; background-color: #4e3928; }
+
+.neogene-overflow { width: 2rem; height: 100%; background-color: red; }
+
+.neogene .vertical-text { margin-top: -50px; }
+
+.scroll-down-arrow { width: 0; height: 0; border-left: 250px solid transparent; border-right: 250px solid transparent; border-top: 50px solid black; position: absolute; top: 75%; }
+
+.header-image { background-image: url("../images/aaa-skull-fade.png"); background-position: center top; background-repeat: no-repeat; background-size: 300px; height: 300px; margin-top: 50px; }
+
+.timescale-scale-bar { position: absolute; width: 100%; border-top: 2px dotted rgba(255, 198, 39, 0.3); color: black; font-size: 1.1rem; text-transform: uppercase; font-weight: 600; }
+.timescale-scale-bar .date { display: none; font-size: .8rem; margin: 0 10px; }
+
+.timeline-scale-item { width: 2rem; }
+
+.timeline-scale-head { position: absolute; left: 85%; z-index: 1; }
+
+.vertical-text { transform: rotate(90deg); transform-origin: left top 0; padding: 0 10px; }
+
+/* TIME PERIODS 
+-------------------------------------------*/
+.neogene, .quarternary { margin-left: 0; }
+
+.pliocene, .miocene, .pleistocene, .holocene { margin-left: 3%; }
+
+.piazcenzian, .zanclean, .messinian, .middle, .upper, .calabrian, .gelasian { margin-left: 6%; }
+
+/*-------------------------------------------
+neogene -miocene --messinian -pliocene --zanclean --piacenzian
+quarternary -pleistocene --gelasian --callabrian --middle --upper -holocene
+-------------------------------------------*/
+.neogene { background-color: red; }
+
+.miocene { background-color: orange; }
+
+.messinian { background-color: #ffc425; }
+
+.pliocene { background-color: limegreen; }
+
+.zanclean { background-color: yellowgreen; }
+
+.piazcenzian { background-color: forestgreen; }
+
+.quarternary { background-color: royalblue; }
+
+.pleistocene { background-color: blueviolet; }
+
+.gelasian { background-color: mediumpurple; }
+
+.calabrian { background-color: purple; }
+
+.middle { background-color: mediumvioletred; }
+
+.upper { background-color: crimson; }
+
+.holocene { background-color: deepskyblue; }
+
+/* TIMELINE 
+-------------------------------------------*/
+/* TIMELINE CONTAINER
+-------------------------------------------*/
+.timeline { position: relative; height: 100%; margin-top: 50px; background-color: #4e3928; background: url(../images/ground-layers-02.svg); background-position: top; background-repeat: no-repeat; background-size: cover; }
+
+.timeline-line { background-color: #ffc425; *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFC425', endColorstr='#FFFFE4C4'); background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffc425), color-stop(100%, #ffe4c4)); background-image: -webkit-linear-gradient(top, #ffc425 0%, #ffe4c4 100%); background-image: -moz-linear-gradient(top, #ffc425 0%, #ffe4c4 100%); background-image: -o-linear-gradient(top, #ffc425 0%, #ffe4c4 100%); background-image: linear-gradient(top, #ffc425 0%, #ffe4c4 100%); width: 20px; height: 100%; margin: 0 auto; }
+
+/* PAGE LOAD ANIMATION
+-------------------------------------------*/
+.load-container { width: 100%; align-content: center; position: absolute; top: 0; padding-top: 20px; }
+
+.loading { border: 10px solid #ffc425; border-radius: 50%; border-top: 10px solid #332017; width: 60px; height: 60px; -webkit-animation: spin 2s linear infinite; animation: spin 2s linear infinite; text-align: center; margin-left: auto; margin-right: auto; }
+
+@-webkit-keyframes spin { 0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); } }
+
+@keyframes spin { 0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); } }
+
+/* TIMELINE EVENTS
+-------------------------------------------*/
+.timeline-scale-bar { position: absolute; }
+
+.hominin { width: 48%; }
+
+.context { width: 39.5%; }
+
+.hominin { border-left: 5px solid white; margin-left: 51.15%; }
+.hominin .timeline-item { margin: 0 20px; }
+
+.context { border-right: 5px solid white; margin-left: 9%; }
+.context .timeline-item { margin: 0; }
+
+.hide-border { border: none; }
+
+.timeline-item, .timeline-scale-item { position: absolute; top: 0; left: 0; height: 100%; }
+
+.timeline-item { display: flex; justify-content: flex-start; align-items: center; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; cursor: pointer; z-index: 1; }
+
+.timeline-hor-scale-container { position: absolute; top: 0; left: 0; height: 100%; width: 100%; display: flex; justify-content: flex-start; align-items: center; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+
+.timeline-horizontal-scale-bar { background-color: rgba(255, 255, 255, 0.4); text-align: right; text-transform: uppercase; width: 100%; font-size: 1rem; color: white; }
+.timeline-horizontal-scale-bar .date { padding-right: 20px; }
+
+.hominin .timeline-item-head, .context .timeline-item-head { color: white; position: relative; background-position: center 0; width: 100px; height: 100px; border-radius: 50%; transition: all .2s ease-in-out; }
+.hominin .timeline-item-head .tl-image-overlay, .context .timeline-item-head .tl-image-overlay { border-radius: 50%; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; border: 2px solid rgba(255, 255, 255, 0.5); background-color: rgba(0, 0, 0, 0.3); }
+.hominin .timeline-item-head .tl-no-overlay, .context .timeline-item-head .tl-no-overlay { background-color: transparent; }
+.hominin .timeline-item-head .tl-head-title, .context .timeline-item-head .tl-head-title { display: none; font-size: 1.5rem; position: absolute; top: 0; left: 0; right: 0; bottom: 0; justify-content: center; align-items: center; }
+.hominin .timeline-item-head .tl-head-title .tl-head-text, .context .timeline-item-head .tl-head-title .tl-head-text { text-align: center; }
+.hominin .timeline-item-head .tl-head-title .date, .context .timeline-item-head .tl-head-title .date { display: block; font-size: 1rem; text-transform: uppercase; margin: 5px 0; }
+.hominin .timeline-item-head:hover, .context .timeline-item-head:hover { transform: scale(3); }
+
+.timeline-item-body { display: none; position: fixed; padding-top: 100px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: black; background-color: rgba(0, 0, 0, 0.8); }
+
+.tl-item-container { position: relative; background-color: #fefefe; margin: auto; padding: 20px 40px 40px; border: 1px solid #888; width: 80%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); -webkit-animation-name: animatetop; -webkit-animation-duration: 0.4s; animation-name: animatetop; animation-duration: 0.4s; }
+.tl-item-container .closebtn { display: none; }
+.tl-item-container img { max-width: 100%; max-height: 600px; height: auto; margin-left: auto; margin-right: auto; margin-bottom: 40px; display: flex; }
+
+.context .item-overlapping2, .context .item-overlapping3, .context .item-overlapping7, .context #tl-item-26 { margin-left: 35%; }
+.context .item-overlapping5, .context #tl-item-30 { margin-left: 20%; }
+
+.hominin .item-overlapping1, .hominin .item-overlapping3, .hominin .item-overlapping4 { margin-left: 35%; }
+.hominin .item-overlapping5, .hominin #tl-item-12, .hominin #tl-item-28 { margin-left: 20%; }
+.hominin #tl-item-5, .hominin #tl-item-11, .hominin #tl-item-19 { margin: 0 20px; }
+.hominin #tl-item-14 { margin-left: 40%; }
+
+.neogene-scale-bar { border-top: 0; }
+
+/* FOOTER
+-------------------------------------------*/
+.footer { background-color: bisque; text-align: center; text-transform: uppercase; font-size: 2rem; letter-spacing: 10; color: black; }
+.footer p { padding: 150px 0; }

@@ -1,0 +1,126 @@
+/* HEADER 
+-------------------------------------------*/
+
+// CONTAINER
+//-----------------------------------------
+.timeline-header-container {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75%;
+    width: 100%;
+    background-color: black; // Old browsers
+    //    @include filter-gradient(black, $header-brown, vertical); // IE6-9
+    //    @include background-image( linear-gradient(top, black 60%, $header-brown 100%));
+    overflow: hidden;
+    clear: both;
+    h1,
+    p {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        align-self: center;
+    }
+}
+
+// HEADER ELEMENTS
+//-----------------------------------------
+.timeline-header {
+    padding: 2em;
+    max-width: 45%;
+    height: 70%;
+    clear: both;
+    position: absolute;
+    h1 {
+        font-size: 6rem;
+        line-height: 1.2;
+        margin-bottom: .2em;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+    p.byline {
+        font-size: 1rem;
+        color: $aaa-yellow;
+    }
+}
+
+.scroll-text {
+    position: absolute;
+    top: 70%;
+    font-size: 1.5rem;
+    a {
+        color: $aaa-yellow;
+        text-decoration: none;
+        &:hover {
+            color: white;
+        }
+    }
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 4;
+    display: flex;
+    align-content: flex-end;
+    justify-content: flex-end;
+    cursor: pointer;
+    //z-index: 999;
+    p {
+        margin-bottom: 0;
+    }
+    img {
+        width: auto;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+// SCROLL DOWN PROMPT
+//-----------------------------------------
+.scroll-container {
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    top: 75%;
+    background-color: $body-brown;
+}
+
+//bring neogene era up to start of scroll container 
+.neogene-overflow {
+    width: 2rem;
+    height: 100%;
+    background-color: red;
+}
+
+.neogene {
+    .vertical-text {
+        margin-top: -50px;
+    }
+}
+
+.scroll-down-arrow {
+    width: 0;
+    height: 0;
+    border-left: 250px solid transparent;
+    border-right: 250px solid transparent;
+    border-top: 50px solid black;
+    position: absolute;
+    top: 75%;
+    //z-index: 2;
+}
+
+// HEADER IMAGE
+//-----------------------------------------
+.header-image {
+    background-image: url('../images/aaa-skull-fade.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 300px;
+    height: 300px;
+    margin-top: 50px;
+}

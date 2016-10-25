@@ -1,0 +1,267 @@
+/* TIMELINE 
+-------------------------------------------*/
+
+
+/* TIMELINE CONTAINER
+-------------------------------------------*/
+
+.timeline {
+    position: relative;
+    height: 100%;
+    margin-top: 50px;
+    background-color: $body-brown;
+    background: url(../images/ground-layers-02.svg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+// horizonatal line through timeline body
+.timeline-line {
+    background-color: $aaa-yellow; // Old browsers
+    @include filter-gradient($aaa-yellow, bisque, vertical); // IE6-9
+    @include background-image(linear-gradient(top, $aaa-yellow 0%, bisque 100%));
+    width: 20px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+
+/* PAGE LOAD ANIMATION
+-------------------------------------------*/
+
+// To do: give the content area a loading lag
+// so the loader animation shows up for a few seconds
+// http://www.w3schools.com/howto/howto_css_loader.asp
+//
+.load-container {
+    width: 100%;
+    align-content: center;
+    position: absolute;
+    top: 0;
+    padding-top: 20px;
+}
+
+.loading {
+    border: 10px solid $aaa-yellow;
+    border-radius: 50%;
+    border-top: 10px solid $header-brown;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* TIMELINE EVENTS
+-------------------------------------------*/
+
+//the scale measure bars around each item
+.timeline-scale-bar {
+    position: absolute;
+    //width: 270px;
+}
+
+.hominin {
+    width: 48%;
+}
+
+.context {
+    width: 39.5%;
+}
+
+.hominin {
+    border-left: 5px solid white;
+    margin-left: 51.15%;
+    .timeline-item {
+        margin: 0 20px;
+    }
+}
+
+.context {
+    border-right: 5px solid white;
+    margin-left: 9%;
+    .timeline-item {
+        margin: 0;
+    }
+}
+
+.hide-border {
+    border: none;
+}
+
+//inside the timeline item
+.timeline-item,
+.timeline-scale-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+//timeline item horizontal scale bar and container 
+.timeline-hor-scale-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    //cursor: pointer;
+}
+
+.timeline-horizontal-scale-bar {
+    background-color: rgba(255, 255, 255, 0.4);
+    text-align: right;
+    text-transform: uppercase;
+    width: 100%;
+    font-size: 1rem;
+    color: white;
+    .date {
+        padding-right: 20px;
+    }
+}
+
+// STYLE THE HEADER INFO
+//-----------------------------------------
+//
+// by event type
+.hominin,
+.context {
+    .timeline-item-head {
+        color: white;
+        position: relative;
+        background-position: center 0;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        transition: all .2s ease-in-out;
+        .tl-image-overlay {
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        .tl-no-overlay {
+            background-color: transparent;
+        }
+        .tl-head-title {
+            display: none;
+            font-size: 1.5rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            //display: flex;
+            justify-content: center;
+            align-items: center;
+            .tl-head-text {
+                text-align: center;
+            }
+            .date {
+                display: block;
+                font-size: 1rem;
+                text-transform: uppercase;
+                margin: 5px 0;
+            }
+        }
+    }
+    .timeline-item-head:hover {
+        transform: scale(3);
+    }
+}
+
+// CONTENT POP UP
+//-----------------------------------------
+//
+.timeline-item-body {
+    display: none;
+    position: fixed;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.tl-item-container {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px 40px 40px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    .closebtn {
+        display: none;
+    }
+    img {
+        max-width: 100%;
+        max-height: 600px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 40px;
+        display: flex;
+    }
+}

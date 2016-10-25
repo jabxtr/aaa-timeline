@@ -1,0 +1,45 @@
+<script id="timelineTemplate" type="tl/template">
+
+    <div id="timelineScaleBar" class="timeline-scale-bar {{eventType}} {{class}}" style="height:{{eventPixels}};top:{{top}};">
+
+        <div class="timeline-hor-scale-container">
+            <div class="timeline-horizontal-scale-bar">
+                <p class="date">{{startEndDate}}</p>
+            </div>
+        </div>
+
+        <div id="tl-item-{{index}}" class="timeline-item item-{{class}}">
+
+            <div id="tlItemHead{{index}}" class="timeline-item-head" style="background-image:url({{img}});background-size:cover;" alt="image of {{name}}">
+
+                <div class="tl-image-overlay">
+
+                    <div class="tl-head-title">
+
+                        <div class="tl-head-text">
+                            {{name}}
+                            <span class="date">{{startEndDate}}</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="tlItemBody{{index}}" class="timeline-item-body">
+                <div class="tl-item-container">
+                    <span class="closebtn">x</span>
+                    <img src="{{img}}" alt="image of {{name}}">
+                    <h2>{{name}}</h2>
+                    <p class="date">{{startEndDate}}</p>
+                    <p class="local">{{location}}</p>
+                    <p>{{desc}}</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</script>

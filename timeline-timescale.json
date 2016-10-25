@@ -1,0 +1,120 @@
+{
+    "timescale": [{
+            "name": "Neogene",
+            "period": "Neogene",
+            "epoch": "",
+            "age": "",
+            "eventType": "time",
+            "startDate": 23000000,
+            "endDate": 2600000
+        },
+        {
+            "name": "Quarternary",
+            "period": "Quarternary",
+            "epoch": "",
+            "age": "",
+            "eventType": "time",
+            "startDate": 2600000,
+            "endDate": 0
+        },
+        {
+            "name": "Miocene",
+            "period": "Neogene",
+            "epoch": "Miocene",
+            "age": "",
+            "eventType": "time",
+            "startDate": 23000000,
+            "endDate": 5300000
+        },
+        {
+            "name": "Pliocene",
+            "period": "Neogene",
+            "epoch": "Pliocene",
+            "age": "",
+            "eventType": "time",
+            "startDate": 5300000,
+            "endDate": 2600000
+        },
+        {
+            "name": "Pleistocene",
+            "period": "Quarternary",
+            "epoch": "Pleistocene",
+            "age": "",
+            "eventType": "time",
+            "startDate": 2600000,
+            "endDate": 11700
+        },
+        {
+            "name": "Holocene",
+            "period": "Quarternary",
+            "epoch": "Holocene",
+            "age": "",
+            "eventType": "time",
+            "startDate": 11700,
+            "endDate": 0
+        },
+        {
+            "name": "Messinian",
+            "period": "Neogene",
+            "epoch": "Miocene",
+            "age": "Messinian",
+            "eventType": "time",
+            "startDate": 7200000,
+            "endDate": 5300000
+        },
+        {
+            "name": "Zanclean",
+            "period": "Neogene",
+            "epoch": "Pliocene",
+            "age": "Zanclean",
+            "eventType": "time",
+            "startDate": 5300000,
+            "endDate": 3600000
+        },
+        {
+            "name": "Piazcenzian",
+            "period": "Neogene",
+            "epoch": "Pliocene",
+            "age": "Piazcenzian",
+            "eventType": "time",
+            "startDate": 3600000,
+            "endDate": 2600000
+        },
+        {
+            "name": "Gelasian",
+            "period": "Quarternary",
+            "epoch": "Pleistocene",
+            "age": "Gelasian",
+            "eventType": "time",
+            "startDate": 2600000,
+            "endDate": 1800000
+        },
+        {
+            "name": "Calabrian",
+            "period": "Quarternary",
+            "epoch": "Pleistocene",
+            "age": "Calabrian",
+            "eventType": "time",
+            "startDate": 1800000,
+            "endDate": 781000
+        },
+        {
+            "name": "Middle",
+            "period": "Quarternary",
+            "epoch": "Pleistocene",
+            "age": "Middle",
+            "eventType": "time",
+            "startDate": 781000,
+            "endDate": 126000
+        },
+        {
+            "name": "Upper",
+            "period": "Quarternary",
+            "epoch": "Pleistocene",
+            "age": "Upper",
+            "eventType": "time",
+            "startDate": 126000,
+            "endDate": 11700
+        }
+    ]
+}

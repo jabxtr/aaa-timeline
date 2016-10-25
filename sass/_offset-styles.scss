@@ -1,0 +1,47 @@
+.context {
+    .item-notoverlap,
+    .item-undefined,
+    .item-overlapping1,
+    .item-overlapping4,
+    .item-overlapping6 {}
+    .item-overlapping2,
+    .item-overlapping3,
+    .item-overlapping7,
+    #tl-item-26 {
+        margin-left: 35%;
+    }
+    .item-overlapping5,
+    #tl-item-30 {
+        margin-left: 20%;
+    }
+}
+
+.hominin {
+    .item-notoverlap,
+    .item-undefined,
+    .item-overlapping2,
+    .item-overlapping6,
+    .item-overlapping7 {}
+    .item-overlapping1,
+    .item-overlapping3,
+    .item-overlapping4 {
+        margin-left: 35%;
+    }
+    .item-overlapping5,
+    #tl-item-12,
+    #tl-item-28 {
+        margin-left: 20%;
+    }
+    #tl-item-5,
+    #tl-item-11,
+    #tl-item-19 {
+        margin: 0 20px;
+    }
+    #tl-item-14 {
+        margin-left: 40%;
+    }
+}
+
+.neogene-scale-bar {
+    border-top: 0;
+}

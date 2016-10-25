@@ -1,0 +1,47 @@
+/* OVERRIDES
+-------------------------------------------*/
+
+html,
+body,
+p,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+div,
+img {
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+
+html {
+    font-family: roboto, helvetica, arial, sans-serif;
+    font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+    line-height: 1.6;
+}
+
+p {
+    margin: .8em 0;
+    &:first-of-type {
+        margin-top: 0;
+    }
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
