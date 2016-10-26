@@ -1,7 +1,7 @@
 # aaa-timeline
-Timeline JS API and site files created for ASU's Ask An Anthropologist project. 
-Funded by the ASU Institute of Human Origins and the Office of Knowledge, Enterprise. and Development. 
+Javascript API created to display a vertical timeline with any numbers of events. Includes timeline data and example styling.
 
-This will be developed into a reusable API to create vertical timelines -- but for now it's a bit messy. Please ask if you have any questions.
+This project was created for ASU's Ask An Anthropologist, and funded by the ASU Institute of Human Origins and the Office of Knowledge, Enterprise, and Development. 
 
 Created by James and David Baxter.
+
